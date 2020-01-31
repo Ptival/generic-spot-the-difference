@@ -1,0 +1,41 @@
+_author_and_maintainer: &author_maintainer
+  - Valentin Robert <valentin.robert.42@gmail.com>
+
+author:
+  *author_maintainer
+
+default-extensions:
+  - DeriveGeneric
+  - FlexibleContexts
+  - TypeOperators
+
+dependencies:
+  - base
+
+extra-source-files:
+  - CHANGELOG.md
+
+ghc-options:
+  - -O2
+  - -Wall
+  - -Werror
+
+library:
+
+  dependencies:
+    - generic-deriving
+    - prettyprinter
+
+  exposed-modules:
+    - Data.Generic.SpotTheDifferences
+
+  source-dirs: lib
+
+license: BSD3
+
+maintainer:
+  *author_maintainer
+
+name: generic-spot-the-differences
+
+version: 0.1.0

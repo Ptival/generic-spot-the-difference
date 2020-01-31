@@ -1,0 +1,32 @@
+cabal-version: 1.12
+
+-- This file has been generated from package.yaml by hpack version 0.31.2.
+--
+-- see: https://github.com/sol/hpack
+--
+-- hash: 5221d6c10460bea31bdee059877caad4ba2cdd9733bf17da3b859890929ff777
+
+name:           generic-spot-the-differences
+version:        0.1.0
+author:         Valentin Robert <valentin.robert.42@gmail.com>
+maintainer:     Valentin Robert <valentin.robert.42@gmail.com>
+license:        BSD3
+license-file:   LICENSE
+build-type:     Simple
+extra-source-files:
+    CHANGELOG.md
+
+library
+  exposed-modules:
+      Data.Generic.SpotTheDifferences
+  other-modules:
+      Paths_generic_spot_the_differences
+  hs-source-dirs:
+      lib
+  default-extensions: DeriveGeneric FlexibleContexts TypeOperators
+  ghc-options: -O2 -Wall -Werror
+  build-depends:
+      base
+    , generic-deriving
+    , prettyprinter
+  default-language: Haskell2010
