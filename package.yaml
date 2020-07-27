@@ -29,6 +29,8 @@ library:
   exposed-modules:
     - Data.Generic.SpotTheDifferences
 
+  other-modules: []
+
   source-dirs: lib
 
 license: BSD3
