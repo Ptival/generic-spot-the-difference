@@ -1,38 +1,14 @@
 {
-    "all-cabal-hashes": {
-        "branch": "151b23d7c6fa5437fc44f1cdd6269b5efcc716e4",
-        "description": "A repository containing all cabal files, with added metadata for package hashes",
-        "homepage": null,
-        "owner": "commercialhaskell",
-        "repo": "all-cabal-hashes",
-        "rev": "151b23d7c6fa5437fc44f1cdd6269b5efcc716e4",
-        "sha256": "12cpd0xinzxjvjj57wwywq71qyql57n92f7mi3k1rbxs3wbri26w",
-        "type": "tarball",
-        "url": "https://github.com/commercialhaskell/all-cabal-hashes/archive/151b23d7c6fa5437fc44f1cdd6269b5efcc716e4.tar.gz",
-        "url_template": "https://github.com/<owner>/<repo>/archive/<rev>.tar.gz"
-    },
-    "ghcide": {
-        "branch": "7e895cfa53260b41996df707baec496a8f2c75dc",
-        "description": "A library for building Haskell IDE tooling",
+    "all-hies": {
+        "branch": "master",
+        "description": "Cached Haskell IDE Engine Nix builds for all GHC versions",
         "homepage": "",
-        "owner": "bubba",
-        "repo": "ghcide",
-        "rev": "7e895cfa53260b41996df707baec496a8f2c75dc",
-        "sha256": "1kj2i86mkaxgxlrbmv2d24mch7hywgcy2n61z8paj21chncs1j5w",
+        "owner": "infinisil",
+        "repo": "all-hies",
+        "rev": "09ba836904fa290b5e37d5403150ea0c921661fb",
+        "sha256": "0qbjqv1fkhkx1cffqybz1mfks1jphh0vh3zd8ad2qd6lch4gyys4",
         "type": "tarball",
-        "url": "https://github.com/bubba/ghcide/archive/7e895cfa53260b41996df707baec496a8f2c75dc.tar.gz",
-        "url_template": "https://github.com/<owner>/<repo>/archive/<rev>.tar.gz"
-    },
-    "haskell-language-server": {
-        "branch": "0.2.2",
-        "description": "Integration point for ghcide and haskell-ide-engine. One IDE to rule them all.",
-        "homepage": null,
-        "owner": "haskell",
-        "repo": "haskell-language-server",
-        "rev": "cbdf0a4e5936cb17ac7f2d2df672c2fa1e23284d",
-        "sha256": "0h45a7z8lyqd8lzcxm1c14dhr169870k0bm16viplvy99qd81yv4",
-        "type": "tarball",
-        "url": "https://github.com/haskell/haskell-language-server/archive/cbdf0a4e5936cb17ac7f2d2df672c2fa1e23284d.tar.gz",
+        "url": "https://github.com/infinisil/all-hies/archive/09ba836904fa290b5e37d5403150ea0c921661fb.tar.gz",
         "url_template": "https://github.com/<owner>/<repo>/archive/<rev>.tar.gz"
     },
     "haskell.nix": {
