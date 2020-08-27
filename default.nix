@@ -2,19 +2,23 @@ let
 
   name = "generic-spot-the-differences";
   compiler-nix-name = "ghc883";
+  fromNiv = niv: fetchTarball { inherit (sources.${niv}) url sha256; };
 
   sources = import ./nix/sources.nix {};
-  haskellNix = import (fetchTarball { inherit (sources."haskell.nix") url sha256; }) {};
-  all-hies = import (fetchTarball { inherit (sources.all-hies) url sha256; }) {};
+  haskellNix = import (fromNiv "haskell.nix") {
+      sourcesOverride = {
+        hackageSrc = fromNiv "hackage.nix";
+      };
+  };
+  all-hies = import (fromNiv "all-hies") {};
 
-  pkgs =
-    (import haskellNix.sources.nixpkgs-2003 (haskellNix.nixpkgsArgs // {
-      overlays = haskellNix.nixpkgsArgs.overlays ++ [
-        all-hies.overlay
-      ];
-    }));
+  pkgs = import haskellNix.sources.nixpkgs-2003 (haskellNix.nixpkgsArgs // {
+    overlays = haskellNix.nixpkgsArgs.overlays ++ [
+      all-hies.overlay
+    ];
+  });
 
-  set = pkgs.haskell-nix.cabalProject' {
+  set = pkgs.haskell-nix.cabalProject {
 
     inherit compiler-nix-name;
 
@@ -25,18 +29,11 @@ let
 
   };
 
-  fromNiv = pkg: pkgs.haskellPackages.callCabal2nix pkg (pkgs.fetchzip { inherit (sources.${pkg}) url sha256; }) {};
-  dontCheck = pkgs.haskell.lib.dontCheck;
-
 in
 
-set.hsPkgs.${name}.components.library // {
+set.${name}.components.library // {
 
-  shell = set.hsPkgs.shellFor {
-
-    buildInputs = [
-      # add development packages here
-    ];
+  shell = set.shellFor {
 
     exactDeps = true;
 
